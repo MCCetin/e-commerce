@@ -1,0 +1,45 @@
+nav {
+  height: 80px;
+}
+.wrapper {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.center {
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 18px;
+}
+.icons {
+  display: flex;
+  gap: 15px;
+  color: #777;
+  cursor: pointer;
+}
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arrowdown {
+  font-size: 12px;
+}
