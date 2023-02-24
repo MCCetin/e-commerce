@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
+import List from "../../components/List";
+import { useParams } from "react-router-dom";
 
 function Products() {
+  const categoryId = parseInt(useParams().id);
+  const [maxPrice, setMaxPrice] = useState(1000);
+  const [sort, setSort] = useState(null);
+
   return (
     <div className={styles.products}>
       <div className={styles.left}>
@@ -23,17 +29,34 @@ function Products() {
         <div className={styles.filterItem}>
           <h2>Filter By Price</h2>
           <span>0</span>
-          <input type="range" />
-          <span>1000</span>
+          <input
+            type="range"
+            min={0}
+            max={1000}
+            onChange={(e) => setMaxPrice(e.target.value)}
+          />
+          <span>{maxPrice}</span>
         </div>
         <div className={styles.filterItem}>
           <h2>Sort By</h2>
           <div className={styles.inputItem}>
-            <input type="radio" name="price" id="asc" value="asc" />
+            <input
+              type="radio"
+              name="price"
+              id="asc"
+              value="asc"
+              onChange={(e) => setSort(e.target.value)}
+            />
             <label htmlFor="asc">Price (Lower First)</label>
           </div>
           <div className={styles.inputItem}>
-            <input type="radio" name="price" id="desc" value="desc" />
+            <input
+              type="radio"
+              name="price"
+              id="desc"
+              value="desc"
+              onChange={(e) => setSort(e.target.value)}
+            />
             <label htmlFor="desc">Price (Higher First)</label>
           </div>
         </div>
@@ -41,10 +64,11 @@ function Products() {
       <div className={styles.right}>
         <div className={styles.image}>
           <img
-            className="catImg"
+            className={styles.catImg}
             src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
           />
+          <List categoryId={categoryId} maxPrice={maxPrice} sort={sort} />
         </div>
         <div className={styles.list}></div>
       </div>
