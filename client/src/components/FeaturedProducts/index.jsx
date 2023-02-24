@@ -1,39 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Card from "../Card";
+import axios from "axios";
 
 function FeaturedProducts({ type }) {
-  const data = [
-    {
-      id: 0,
-      img: "https://picsum.photos/200/300?random=1",
-      img2: "https://picsum.photos/200/300?random=2",
-      title: "Hat",
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 1,
-      img: "https://picsum.photos/200/300?random=3",
-      title: "Hat",
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 2,
-      img: "https://picsum.photos/200/300?random=4",
-      title: "Hat",
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 3,
-      img: "https://picsum.photos/200/300?random=5",
-      title: "Hat",
-      oldPrice: 19,
-      price: 12,
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const {data} = await axios.get(
+          `${import.meta.env.VITE_APP_API_URL}/products`,
+          {
+            headers: {
+              Authorization: `bearer ${import.meta.env.VITE_APP_API_TOKEN}`,
+            },
+          }
+        );
+        setData(data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className={styles.featuredProducts}>
       <div className={styles.top}>

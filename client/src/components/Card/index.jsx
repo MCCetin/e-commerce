@@ -6,7 +6,7 @@ function Card({ item }) {
   const [index, setIndex] = useState(0);
 
   return (
-    <Link className={styles.link} to={`product/${item.id}`}>
+    <Link className={styles.link} to={`/product/${item.id}`}>
       <div className={styles.card}>
         <div
           className={styles.image}
@@ -17,8 +17,8 @@ function Card({ item }) {
             setIndex(0);
           }}
         >
-          {/* {item.isNew&&<span>New Season</span>} */}
-          <span>New Season</span>
+          {item?.attributes.isNew && <span>New Season</span>}
+
           <img src={item.img} alt="" className={styles.mainImg} />
           <img
             src={item.img2}
