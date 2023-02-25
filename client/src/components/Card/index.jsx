@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function Card({ item }) {
   const [index, setIndex] = useState(0);
-
   return (
     <Link className={styles.link} to={`/product/${item.id}`}>
       <div className={styles.card}>
@@ -18,10 +17,19 @@ function Card({ item }) {
           }}
         >
           {item?.attributes.isNew && <span>New Season</span>}
-
-          <img src={item.img} alt="" className={styles.mainImg} />
           <img
-            src={item.img2}
+            src={
+              import.meta.env.VITE_APP_UPLOAD_URL +
+              item.attributes.img.data.attributes.url
+            }
+            alt=""
+            className={styles.mainImg}
+          />
+          <img
+            src={
+              import.meta.env.VITE_APP_UPLOAD_URL +
+              item.attributes.img2.data.attributes.url
+            }
             alt=""
             className={styles.secondImg}
             style={{ zIndex: `${index}` }}
@@ -31,8 +39,10 @@ function Card({ item }) {
         <h2 className={styles.title}>{item.title}</h2>
 
         <div className={styles.prices}>
-          <h3 className={styles.oldPrice}>${item.oldPrice}</h3>
-          <h3 className={styles.price}>${item.price}</h3>
+          <h3 className={styles.oldPrice}>
+            ${item?.attributes.oldPrice || item?.attributes.price + 15}
+          </h3>
+          <h3 className={styles.price}>${item?.attributes.price}</h3>
         </div>
       </div>
     </Link>

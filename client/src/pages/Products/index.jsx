@@ -1,30 +1,46 @@
 import React, { useState } from "react";
-import styles from "./styles.module.css";
-import List from "../../components/List";
 import { useParams } from "react-router-dom";
+import List from "../../components/List";
+import useFetch from "../../hooks/useFetch";
+import styles from "./styles.module.css";
 
 function Products() {
   const categoryId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState("asc");
+  const [selectedSubCats, setSelectedSubCats] = useState([]);
+
+  const { data, loading, error } = useFetch(
+    `/sub-categories?[filters][categories][id][$eq]=${categoryId}`
+  );
+
+  function handeleChange(e) {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    setSelectedSubCats(
+      isChecked
+        ? [...selectedSubCats, value]
+        : selectedSubCats.filter((item) => item !== value)
+    );
+  }
 
   return (
     <div className={styles.products}>
       <div className={styles.left}>
         <div className={styles.filterItem}>
           <h2>Categories</h2>
-          <div className={styles.inputItem}>
-            <input type="checkbox" id="1" value={1} />
-            <label htmlFor="1">Shoes</label>
-          </div>
-          <div className={styles.inputItem}>
-            <input type="checkbox" id="1" value={1} />
-            <label htmlFor="1">Skirt</label>
-          </div>
-          <div className={styles.inputItem}>
-            <input type="checkbox" id="1" value={1} />
-            <label htmlFor="1">Jean</label>
-          </div>
+          {data.map((item) => (
+            <div className={styles.inputItem} key={item.id}>
+              <input
+                type="checkbox"
+                id={item.id}
+                value={item.id}
+                onChange={handeleChange}
+              />
+              <label htmlFor={item.id}>{item.attributes.title}</label>
+            </div>
+          ))}
         </div>
         <div className={styles.filterItem}>
           <h2>Filter By Price</h2>
@@ -68,7 +84,12 @@ function Products() {
             src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
           />
-          <List categoryId={categoryId} maxPrice={maxPrice} sort={sort} />
+          <List
+            categoryId={categoryId}
+            maxPrice={maxPrice}
+            sort={sort}
+            subCats={selectedSubCats}
+          />
         </div>
         <div className={styles.list}></div>
       </div>

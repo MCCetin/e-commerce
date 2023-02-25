@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 
 function Categories() {
+
   return (
     <div className={styles.categories}>
       <div className={styles.container}>
@@ -13,7 +14,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link className={styles.link} to="/products/1">
+              <Link className={styles.link} to="/products/3">
                 Sale
               </Link>
             </button>
@@ -37,7 +38,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link to="/products/1" className={styles.link}>
+              <Link to="/products/6" className={styles.link}>
                 New Season
               </Link>
             </button>
@@ -53,7 +54,7 @@ function Categories() {
                   alt=""
                 />
                 <button>
-                  <Link to="/products/1" className={styles.link}>
+                  <Link to="/products/2" className={styles.link}>
                     Men
                   </Link>
                 </button>
@@ -66,7 +67,7 @@ function Categories() {
                   alt=""
                 />
                 <button>
-                  <Link to="/products/1" className={styles.link}>
+                  <Link to="/products/5" className={styles.link}>
                     Accessories
                   </Link>
                 </button>
@@ -79,7 +80,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link to="/products/1" className={styles.link}>
+              <Link to="/products/4" className={styles.link}>
                 Shoes
               </Link>
             </button>
