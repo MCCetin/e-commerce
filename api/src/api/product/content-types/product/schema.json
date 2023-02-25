@@ -31,7 +31,7 @@
     },
     "img2": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -62,7 +62,6 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "normal",
         "featured",
         "trending"
       ]
