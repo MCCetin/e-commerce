@@ -54,14 +54,9 @@ function Product() {
           </div>
 
           <div className={styles.right}>
-            <h1>Title</h1>
-            <span className={styles.price}>$199</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Architecto a sapiente dolore recusandae libero maiores in aut
-              mollitia beatae. Odio possimus neque harum explicabo aliquid
-              consequatur expedita quia, impedit fugit!
-            </p>
+            <h1>{data.attributes.title}</h1>
+            <span className={styles.price}>${data.attributes.price}</span>
+            <p>{data.attributes.desc}</p>
             <div className={styles.quantity}>
               <button
                 onClick={() =>
