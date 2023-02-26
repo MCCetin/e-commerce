@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Cart from "../Cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,7 +13,9 @@ import {
 import styles from "./styles.module.css";
 
 function Navbar() {
+  const products = useSelector((state) => state.cart.products);
   const [open, setOpen] = useState(false);
+  
   return (
     <nav>
       <div className="wrapper">
@@ -35,7 +38,7 @@ function Navbar() {
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/1">
+              <Link className={styles.link} to="/products/2">
                 Men
               </Link>
             </div>
@@ -47,13 +50,13 @@ function Navbar() {
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/1">
+              <Link className={styles.link} to="/products/6">
                 Children
               </Link>
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/1">
+              <Link className={styles.link} to="/products/5">
                 Accessories
               </Link>
             </div>
@@ -94,8 +97,13 @@ function Navbar() {
               <FontAwesomeIcon icon={faUser} />
               <FontAwesomeIcon icon={faHeart} />
               <div className="cart" onClick={() => setOpen(!open)}>
-                <FontAwesomeIcon icon={faCartShopping} />
-                <span>0</span>
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className={styles.cartIcon}
+                />
+                {products.length !== 0 && (
+                  <span className={styles.quantity}>{products.length}</span>
+                )}
               </div>
             </div>
           </div>
