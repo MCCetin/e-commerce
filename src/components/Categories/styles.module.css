@@ -47,6 +47,15 @@
 }
 
 .link {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 540px) {
+  .container {
+    margin-bottom: 32px;
+  }
+  .categories button {
+    min-width: 0;
+  }
 }

@@ -4,3 +4,9 @@
     justify-content: space-between;
     gap: 20px;
 }
+
+@media (max-width:540px) {
+    .list {
+        justify-content: center;
+    }
+}

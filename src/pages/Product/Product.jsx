@@ -48,8 +48,10 @@ function Product() {
           </div>
 
           <div className={styles.right}>
-            <h1>{data.attributes.title}</h1>
-            <span className={styles.price}>${data.attributes.price}</span>
+            <div className={styles.wrapper}>
+              <h1>{data.attributes.title}</h1>
+              <span className={styles.price}>${data.attributes.price}</span>
+            </div>
             <p>{data.attributes.desc}</p>
             <div className={styles.quantity}>
               <button

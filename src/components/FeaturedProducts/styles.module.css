@@ -24,3 +24,8 @@ p {
   justify-content: center;
   gap: 50px;
 }
+@media (max-width:540px) {
+  .featuredProducts {
+    margin: 0;
+  }
+}

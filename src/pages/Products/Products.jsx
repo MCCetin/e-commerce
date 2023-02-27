@@ -10,9 +10,7 @@ function Products() {
   const [sort, setSort] = useState("asc");
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
-  const { data, loading, error } = useFetch(
-    `/sub-categories`
-  );
+  const { data, loading, error } = useFetch(`/sub-categories`);
 
   function handeleChange(e) {
     const value = e.target.value;
@@ -84,13 +82,13 @@ function Products() {
             src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
           />
-          <List
-            categoryId={categoryId}
-            maxPrice={maxPrice}
-            sort={sort}
-            subCats={selectedSubCats}
-          />
         </div>
+        <List
+          categoryId={categoryId}
+          maxPrice={maxPrice}
+          sort={sort}
+          subCats={selectedSubCats}
+        />
         <div className={styles.list}></div>
       </div>
     </div>

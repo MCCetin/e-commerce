@@ -39,3 +39,17 @@ h2 {
   object-fit: cover;
   margin-bottom: 50px;
 }
+
+@media (max-width: 540px) {
+  .products {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  
+
+  .image {
+    display: none;
+  }
+}

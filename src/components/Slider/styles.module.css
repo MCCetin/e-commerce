@@ -31,5 +31,19 @@
 }
 
 .icon {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+@media (max-width: 540px) {
+  .slider {
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+  .container {
+    width: 100vw;
+  }
+
+  .slider .container img {
+    object-fit:cover;
+  }
 }

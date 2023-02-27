@@ -6,3 +6,9 @@
   font-family: "Tilt Warp", sans-serif;
   /* overflow-y: hidden; */
 }
+
+@media (max-width: 540px) {
+  .app {
+    width: 100vw;
+  }
+}

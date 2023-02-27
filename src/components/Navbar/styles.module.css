@@ -60,3 +60,15 @@ nav {
   right: 10px;
   top: 10px;
 }
+@media (max-width: 540px) {
+ 
+ .left {
+  display: none;
+ }
+
+ .item {
+  display: none;
+ }
+ 
+ 
+}
