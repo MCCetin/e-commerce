@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import Card from "../Card";
+import Card from "../Card/Card";
 import axios from "axios";
 import useFetch from "../../hooks/useFetch";
 

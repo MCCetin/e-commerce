@@ -8,16 +8,16 @@ function Footer() {
       <div className={styles.top}>
         <div className={styles.item}>
           <h1>Categories</h1>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/products/6">
             Women
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/products/5">
             Men
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/products/4">
             Shoes
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/products/3">
             Accessories
           </Link>
           <Link className={styles.link} to="/products/1">
@@ -26,19 +26,19 @@ function Footer() {
         </div>
         <div className={styles.item}>
           <h1>Links</h1>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/">
             FAQ
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/">
             Pages
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/">
             Stores
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/">
             Compare
           </Link>
-          <Link className={styles.link} to="/products/1">
+          <Link className={styles.link} to="/">
             Cookies
           </Link>
         </div>

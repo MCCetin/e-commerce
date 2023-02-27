@@ -27,10 +27,7 @@ function Cart() {
           <h1>Product in your cart</h1>
           {products?.map((item) => (
             <div className={styles.item} key={item.id}>
-              <img
-                src={import.meta.env.VITE_APP_UPLOAD_URL + item.img}
-                alt=""
-              />
+              <img src={item.img} alt="" />
               <div className={styles.details}>
                 <h2>{item.title}</h2>
                 <p>{item.title.substring(0, 100)}</p>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Card from "../Card";
+import Card from "../Card/Card";
 import useFetch from "../../hooks/useFetch";
 
 function List({ categoryId, sort, subCats, maxPrice }) {

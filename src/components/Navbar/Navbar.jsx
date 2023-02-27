@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Cart from "../Cart";
+import Cart from "../Cart/Cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -38,25 +38,25 @@ function Navbar() {
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/2">
+              <Link className={styles.link} to="/products/5">
                 Men
               </Link>
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/1">
+              <Link className={styles.link} to="/products/6">
                 Women
               </Link>
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/6">
+              <Link className={styles.link} to="/products/1">
                 Children
               </Link>
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/5">
+              <Link className={styles.link} to="/products/3">
                 Accessories
               </Link>
             </div>

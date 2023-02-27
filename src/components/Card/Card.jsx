@@ -18,18 +18,12 @@ function Card({ item }) {
         >
           {item?.attributes.isNew && <span>New Season</span>}
           <img
-            src={
-              import.meta.env.VITE_APP_UPLOAD_URL +
-              item.attributes.img.data.attributes.url
-            }
+            src={item.attributes.img.data.attributes.url}
             alt=""
             className={styles.mainImg}
           />
           <img
-            src={
-              import.meta.env.VITE_APP_UPLOAD_URL +
-              item.attributes.img2.data.attributes.url
-            }
+            src={item.attributes.img2.data.attributes.url}
             alt=""
             className={styles.secondImg}
             style={{ zIndex: `${index}` }}

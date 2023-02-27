@@ -14,7 +14,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link className={styles.link} to="/products/3">
+              <Link className={styles.link} to="/products/1">
                 Sale
               </Link>
             </button>
@@ -25,7 +25,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link to="/products/1" className={styles.link}>
+              <Link to="/products/6" className={styles.link}>
                 Women
               </Link>
             </button>
@@ -38,7 +38,7 @@ function Categories() {
               alt=""
             />
             <button>
-              <Link to="/products/6" className={styles.link}>
+              <Link to="/products/2" className={styles.link}>
                 New Season
               </Link>
             </button>
@@ -54,7 +54,7 @@ function Categories() {
                   alt=""
                 />
                 <button>
-                  <Link to="/products/2" className={styles.link}>
+                  <Link to="/products/5" className={styles.link}>
                     Men
                   </Link>
                 </button>
@@ -67,7 +67,7 @@ function Categories() {
                   alt=""
                 />
                 <button>
-                  <Link to="/products/5" className={styles.link}>
+                  <Link to="/products/3" className={styles.link}>
                     Accessories
                   </Link>
                 </button>

@@ -29,28 +29,19 @@ function Product() {
           <div className={styles.left}>
             <div className={styles.images}>
               <img
-                src={
-                  import.meta.env.VITE_APP_UPLOAD_URL +
-                  data.attributes.img.data.attributes.url
-                }
+                src={data.attributes.img.data.attributes.url}
                 alt=""
                 onClick={() => setSelectedImg("img")}
               />
               <img
-                src={
-                  import.meta.env.VITE_APP_UPLOAD_URL +
-                  data.attributes.img2.data.attributes.url
-                }
+                src={data.attributes.img2.data.attributes.url}
                 alt=""
                 onClick={() => setSelectedImg("img2")}
               />
             </div>
             <div className={styles.mainImg}>
               <img
-                src={
-                  import.meta.env.VITE_APP_UPLOAD_URL +
-                  data.attributes[selectedImg].data.attributes.url
-                }
+                src={data.attributes[selectedImg].data.attributes.url}
                 alt=""
               />
             </div>
