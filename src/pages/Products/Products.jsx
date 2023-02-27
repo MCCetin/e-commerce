@@ -6,12 +6,12 @@ import styles from "./styles.module.css";
 
 function Products() {
   const categoryId = parseInt(useParams().id);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(250);
   const [sort, setSort] = useState("asc");
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
   const { data, loading, error } = useFetch(
-    `/sub-categories?[filters][categories][id][$eq]=${categoryId}`
+    `/sub-categories`
   );
 
   function handeleChange(e) {
@@ -48,7 +48,7 @@ function Products() {
           <input
             type="range"
             min={0}
-            max={1000}
+            max={250}
             onChange={(e) => setMaxPrice(e.target.value)}
           />
           <span>{maxPrice}</span>
