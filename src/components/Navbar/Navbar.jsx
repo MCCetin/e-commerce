@@ -70,11 +70,6 @@ function Navbar() {
                 Contact
               </Link>
             </div>
-            <div className={styles.item}>
-              <Link className={styles.link} to="/">
-                Stores
-              </Link>
-            </div>
 
             <div className={styles.icons}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
