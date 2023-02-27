@@ -15,28 +15,12 @@ import styles from "./styles.module.css";
 function Navbar() {
   const products = useSelector((state) => state.cart.products);
   const [open, setOpen] = useState(false);
-  
+
   return (
     <nav>
       <div className="wrapper">
         <div className={styles.wrapper}>
           <div className={styles.left}>
-            <div className={styles.item}>
-              <img src="../public/img/en.png" alt="" />
-              <FontAwesomeIcon
-                className={styles.arrowdown}
-                icon={faChevronDown}
-              />
-            </div>
-
-            <div className={styles.item}>
-              <span>USD</span>
-              <FontAwesomeIcon
-                className={styles.arrowdown}
-                icon={faChevronDown}
-              />
-            </div>
-
             <div className={styles.item}>
               <Link className={styles.link} to="/products/5">
                 Men
