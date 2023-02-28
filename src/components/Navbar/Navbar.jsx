@@ -34,12 +34,6 @@ function Navbar() {
             </div>
 
             <div className={styles.item}>
-              <Link className={styles.link} to="/products/1">
-                Children
-              </Link>
-            </div>
-
-            <div className={styles.item}>
               <Link className={styles.link} to="/products/3">
                 Accessories
               </Link>
@@ -60,11 +54,7 @@ function Navbar() {
                 Homepage
               </Link>
             </div>
-            <div className={styles.item}>
-              <Link className={styles.link} to="/">
-                About
-              </Link>
-            </div>
+
             <div className={styles.item}>
               <Link className={styles.link} to="/">
                 Contact
