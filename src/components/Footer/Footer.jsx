@@ -71,7 +71,7 @@ function Footer() {
         <div className={styles.right}>
           <img
             className={styles.payment}
-            src="../public/img/payment.png"
+            src="../../../img/payment.png"
             alt=""
           />
         </div>
